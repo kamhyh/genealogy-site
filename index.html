@@ -1,1 +1,126 @@
-<!DOCTYPE html><html><head><title>Genealogy Site</title></head><body><h1>Bonjour Pascal</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Genealogy Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #4CAF50;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .tree {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .tree ul {
+      display: table;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .tree ul ul {
+      margin-top: 20px;
+      position: relative;
+    }
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-left: 2px solid #ccc;
+      width: 0;
+      height: 20px;
+    }
+    .tree li {
+      display: table-cell;
+      text-align: center;
+      vertical-align: top;
+      padding: 10px;
+      position: relative;
+    }
+    .tree li::before, .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      border-top: 2px solid #ccc;
+      width: 50%;
+    }
+    .tree li::before {
+      left: -50%;
+      border-right: 2px solid #ccc;
+      border-top-right-radius: 20px;
+    }
+    .tree li::after {
+      right: -50%;
+      border-left: 2px solid #ccc;
+      border-top-left-radius: 20px;
+    }
+    .tree ul ul ul li:first-child::before {
+      border-radius: 0 0 20px 20px;
+      border-right: 2px solid #ccc;
+    }
+    .tree ul ul ul li:last-child::after {
+      border-radius: 0 0 20px 20px;
+      border-left: 2px solid #ccc;
+    }
+    .tree li span {
+      display: inline-block;
+      border: 2px solid #4CAF50;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: white;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <header>Bienvenue sur le site de généalogie</header>
+  <div class="container">
+    <h1>Bonjour Pascal</h1>
+    <h2>Exemple d'Arbre Généalogique</h2>
+    <div class="tree">
+      <ul>
+        <li>
+          <span>Grand-père</span>
+          <ul>
+            <li>
+              <span>Père</span>
+              <ul>
+                <li><span>Moi</span></li>
+                <li><span>Frère/Sœur</span></li>
+              </ul>
+            </li>
+            <li>
+              <span>Oncle/Tante</span>
+              <ul>
+                <li><span>Cousin</span></li>
+                <li><span>Cousine</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
