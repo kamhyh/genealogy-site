@@ -1,126 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genealogy Site</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
       color: #333;
     }
     header {
-      background-color: #4CAF50;
+      background-color: #4682b4;
       color: white;
-      padding: 1rem 0;
+      padding: 20px 0;
       text-align: center;
       font-size: 2.5rem;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px #666;
     }
     .container {
-      width: 80%;
       margin: 0 auto;
       padding: 20px;
+      max-width: 1000px;
     }
     h1 {
-      color: #4CAF50;
+      color: #333;
       text-align: center;
-      margin-top: 50px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      margin-top: 10px;
     }
     .tree {
-      margin: 0;
       display: flex;
       justify-content: center;
+      margin: 40px 0;
     }
     .tree ul {
-      display: table;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .tree ul ul {
-      margin-top: 20px;
-      position: relative;
-    }
-    .tree ul ul::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      border-left: 2px solid #ccc;
-      width: 0;
-      height: 20px;
+      padding-top: 20px; 
+      position: relative; 
+      transition: all 0.5s;
     }
     .tree li {
-      display: table-cell;
-      text-align: center;
-      vertical-align: top;
-      padding: 10px;
-      position: relative;
+      float: left; 
+      text-align: center; 
+      list-style-type: none; 
+      position: relative; 
+      padding: 20px 5px 0 5px;
+      transition: all 0.5s;
     }
     .tree li::before, .tree li::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      border-top: 2px solid #ccc;
-      width: 50%;
-    }
-    .tree li::before {
-      left: -50%;
-      border-right: 2px solid #ccc;
-      border-top-right-radius: 20px;
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      right: 50%; 
+      border-top: 1px solid #ccc; 
+      width: 50%; 
+      height: 20px; 
     }
     .tree li::after {
-      right: -50%;
-      border-left: 2px solid #ccc;
-      border-top-left-radius: 20px;
+      right: auto; 
+      left: 50%; 
+      border-left: 1px solid #ccc;
     }
-    .tree ul ul ul li:first-child::before {
-      border-radius: 0 0 20px 20px;
-      border-right: 2px solid #ccc;
+    .tree li:only-child::after, .tree li:only-child::before {
+      display: none;
     }
-    .tree ul ul ul li:last-child::after {
-      border-radius: 0 0 20px 20px;
-      border-left: 2px solid #ccc;
+    .tree li:only-child { 
+      padding-top: 0; 
+    }
+    .tree li:first-child::before, .tree li:last-child::after{
+      border: 0 none;
+    }
+    .tree li:last-child::before{
+      border-right: 1px solid #ccc;
+      border-radius: 0 5px 0 0;
+    }
+    .tree li:first-child::after{
+      border-radius: 5px 0 0 0;
+    }
+    .tree ul ul::before {
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: 50%; 
+      border-left: 1px solid #ccc; 
+      width: 0; 
+      height: 20px;
     }
     .tree li span {
-      display: inline-block;
-      border: 2px solid #4CAF50;
-      padding: 10px 20px;
-      border-radius: 20px;
+      border: 1px solid #ccc; 
+      padding: 8px 15px; 
+      text-decoration: none; 
+      color: #666;
       background-color: white;
-      color: #4CAF50;
+      font-size: 14px;
+      display: inline-block; 
+      border-radius: 5px; 
+      transition: all 0.5s;
+    }
+    .tree li span:hover, .tree li span:hover + ul li span {
+      background: #c8e4f8;
+      color: #000;
+      border: 1px solid #94a0b4;
+    }
+    .tree li span:hover + ul li::after, 
+    .tree li span:hover + ul li::before, 
+    .tree li span:hover + ul::before, 
+    .tree li span:hover + ul ul::before{
+      border-color:  #94a0b4;
     }
   </style>
 </head>
 <body>
-  <header>Bienvenue sur le site de généalogie</header>
+  <header>Bienvenue sur votre site de généalogie</header>
   <div class="container">
-    <h1>Bonjour Pascal</h1>
-    <h2>Exemple d'Arbre Généalogique</h2>
+    <h1>Bienvenue, Pascal!</h1>
+    <p>Explorez votre histoire familiale à travers cet arbre généalogique magnifique et interactif.</p>
+
+    <h2 style="text-align: center; color: #4682b4;">Arbre Généalogique</h2>
+
     <div class="tree">
       <ul>
         <li>
-          <span>Grand-père</span>
+          <span>Grand-Parents</span>
           <ul>
             <li>
-              <span>Père</span>
+              <span>Parent 1</span>
               <ul>
                 <li><span>Moi</span></li>
                 <li><span>Frère/Sœur</span></li>
               </ul>
             </li>
             <li>
-              <span>Oncle/Tante</span>
+              <span>Parent 2</span>
               <ul>
+                <li><span>Oncle</span></li>
+                <li><span>Tante</span></li>
                 <li><span>Cousin</span></li>
-                <li><span>Cousine</span></li>
               </ul>
             </li>
           </ul>
         </li>
       </ul>
     </div>
+
+    <p style="text-align:center; padding: 10px;">Explorez les racines de votre famille et découvrez votre histoire!</p>
   </div>
 </body>
 </html>
